@@ -23,7 +23,7 @@ ul {
     margin: 0;
     justify-content: center;
     /* margin-top: 8, 0, 8, 0; */
-    padding: 16, 0, 16, 0;
+    padding: 16;
 }
 
 li {
@@ -40,8 +40,16 @@ li > a {
     list-style-type: none;
 }
 
+li > a#active{
+    color: lightblue;
+}
+
 li > a:hover {
     font-size: 22px;
+}
+
+.navbar-item {
+    margin-right: 50px;  /* Ruimte tussen items */
 }
 
 #main-container {

@@ -40,6 +40,10 @@ li > a {
     list-style-type: none;
 }
 
+li > a:hover {
+    font-size: 22px;
+}
+
 #main-container {
     align-content: center;
     /* margin: 0%, 5%, 0%, 5%; */

@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+}
+
+a {
+    font-family: 'Roboto', 'segoe UI', 'Cantarell', sans-serif;
+    text-decoration: none;
+}
+
+nav {
+    background: rgb(138,36,201);
+	background: linear-gradient(-90deg, rgba(138,36,201,1) 0%, rgba(108,41,209,1) 100%, rgba(0,212,255,1) 100%);
+	margin-top: 0;
+    padding: 1em;
+    color:white
+}
+
+.main {
+    background-color: lightgray;
+}
+
+ul {
+    margin: 0;
+    justify-content: center;
+    /* margin-top: 8, 0, 8, 0; */
+    padding: 16, 0, 16, 0;
+}
+
+li {
+    margin-left: 10;
+}
+
+ul > li {
+    display: inline-block;
+    zoom: 1;
+}
+
+li > a {
+    color: white;
+    list-style-type: none;
+}
+
+#main-container {
+    align-content: center;
+    /* margin: 0%, 5%, 0%, 5%; */
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: whitesmoke;
+}

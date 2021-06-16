@@ -1,0 +1,183 @@
+body {
+    background: rgb(138,36,201);
+    background: linear-gradient(90deg, rgba(138,36,201,1) 0%, rgba(108,41,209,1) 100%, rgba(0,212,255,1) 100%);
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+nav {
+    background: black;
+    color: white;
+    text-transform: uppercase;
+    height: 60px;
+    font-size: 2em;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+a {
+    color : white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: hotpink;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+h1 {
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
+
+p {
+    margin-top: 8px;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+ul {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+li {
+    list-style: none;
+    display: inline;
+    padding-right: 37px;
+    padding-left: 37px;
+}
+
+nav h2 {
+    float: left;
+    margin: 0;
+    padding-left: 1rem;
+}
+
+#personalia tbody tr:hover {
+    background: rgb(211, 210, 210);
+}
+
+#personalia tr:nth-child(even) {
+    background: rgb(233, 232, 232);
+}
+
+#languages tr:nth-child(even) td:not(:first-child) {
+    background: rgb(233, 232, 232);
+}
+
+#languages tr:not(:first-child):hover td:not(:first-child) {
+    background: rgb(211, 210, 210);
+}
+
+#container {
+    width: 800px;
+    background: white;
+    margin: 30px auto 0 auto;
+    padding: 15px;
+    border-radius: 0px 0px 15px 15px;
+    overflow: auto;
+    -webkit-box-shadow: 10px 10px 70px -4px rgba(0,0,0,0.20);
+    -moz-box-shadow: 10px 10px 70px -4px rgba(0,0,0,0.20);
+    box-shadow: 10px 10px 70px -4px rgba(0,0,0,0.20);
+}
+
+#profilePicture img {
+    border-radius: 50%;
+    width: 30%;
+    -webkit-box-shadow: 4px 3px 51px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 3px 51px -6px rgba(0,0,0,0.75);
+    box-shadow: 4px 3px 51px -6px rgba(0,0,0,0.75);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#personalia {
+    margin-top: 20px;
+    float: left;
+}
+
+#languages {
+    margin-top: 20px;
+    float: right;
+}
+
+#contactForm {
+    text-align: center;
+}
+
+.paddingLeftRight-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.icon {
+    /* border-radius: 50%; */
+    width: 50px;
+    float: right;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.tableHeaderPadding {
+    padding-bottom: 10px;
+}
+
+#contactForm {
+    width: 400px;
+    margin: auto;
+}
+
+form {
+    width: 100%;
+}
+
+.formGroup {
+    overflow: auto;
+    margin-bottom: 5px;
+}
+
+.labelLeft {
+    float: left;
+}
+
+.inputRight {
+    float: right;
+}
+
+.formButton {
+    background: purple;
+    padding: 5px;
+    width: 100%;
+    border: 0;
+    border-radius: 15px;
+    border: 1px solid grey;
+    text-transform: uppercase;
+    color: white;
+    height: 40px;
+}
+
+.formButton:hover {
+    font-weight: 700;
+    background: hotpink;
+    border: none;
+}

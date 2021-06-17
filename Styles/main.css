@@ -2,60 +2,79 @@ body {
     margin: 0;
 }
 
+main {
+    background-color: lightgray;
+}
+
 a {
     font-family: 'Roboto', 'segoe UI', 'Cantarell', sans-serif;
     text-decoration: none;
 }
 
+h1 {
+    font-family: 'Roboto', 'segoe UI', 'Cantarell', sans-serif;
+}
+
 nav {
     background: rgb(138,36,201);
 	background: linear-gradient(-90deg, rgba(138,36,201,1) 0%, rgba(108,41,209,1) 100%, rgba(0,212,255,1) 100%);
-	margin-top: 0;
-    padding: 1em;
-    color:white
+    color:white;
+
+    overflow: hidden;
+    background-color: #333;
+    font-family: 'Roboto';
 }
 
-.main {
-    background-color: lightgray;
-}
-
-ul {
-    margin: 0;
-    justify-content: center;
-    /* margin-top: 8, 0, 8, 0; */
-    padding: 16;
-}
-
-li {
-    margin-left: 10;
-}
-
-ul > li {
-    display: inline-block;
-    zoom: 1;
-}
-
-li > a {
+.navbar a {
+    float: left;
+    font-size: 16px;
     color: white;
-    list-style-type: none;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-li > a#active{
-    color: lightblue;
+.dropdown {
+    float: left;
+    overflow: hidden;
 }
 
-li > a:hover {
-    font-size: 22px;
+.dropdown .dropdown-button {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
 }
 
-.navbar-item {
-    margin-right: 50px;  /* Ruimte tussen items */
+.navbar a:hover, .dropdown:hover .dropdown-button {
+    background-color: rgba(0, 0, 0, 10%);
 }
 
-#main-container {
-    align-content: center;
-    /* margin: 0%, 5%, 0%, 5%; */
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color: whitesmoke;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 13px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

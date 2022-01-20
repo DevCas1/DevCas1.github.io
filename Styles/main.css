@@ -49,6 +49,7 @@ nav {
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    padding: 0;
 }
 
 .navbar a:hover:not(.dropdown-button), .dropdown:hover .dropdown-button {

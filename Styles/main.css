@@ -9,3 +9,18 @@ nav {
 main {
     background-color:whitesmoke;
 }
+
+img {
+    size: 0%;
+}
+
+mark {
+    color: purple;
+    background: none;
+}
+
+.bt {
+    border-bottom: 1px solid;
+    border-top-style: solid !important;
+    border-top-width: 1px !important;
+}

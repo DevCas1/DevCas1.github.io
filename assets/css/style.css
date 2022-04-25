@@ -453,9 +453,9 @@ section {
   transition: 0.3s;
   width: 50%;
 }
-/* .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(20, 157, 221, 0.95);
-} */
+p .portfolio-links a:hover {
+  color:inherit;
+}
 .portfolio .portfolio-wrap .portfolio-links a + a {
   border-left: 1px solid darkviolet;
 }

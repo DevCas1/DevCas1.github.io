@@ -9,7 +9,12 @@ a {
 }
 
 a:hover {
-  color: purple;
+  color: darkviolet;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -441,7 +446,7 @@ section {
   bottom: -60px;
   z-index: 3;
   position: absolute;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.1s;
   display: flex;
   justify-content: center;
 }

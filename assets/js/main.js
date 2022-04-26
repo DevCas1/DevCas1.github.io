@@ -1,11 +1,12 @@
-// Custom Elements
-// const Translate = xtag.create('x-translate-p', class extends XTagElement {
-//   content (){ return 'Translate'; }
-//   '::template(true)' (){
-//     return `<p>${this.content()}</p>`
-//   }
-// });
+import { FASTElement, customElement, attr, html } from "@microsoft/fast-element";
 
+// Custom Elements
+@customElement("translate-tag")
+export class TranslateTag extends FASTElement {
+  @attr identifier: string = "0";
+
+
+}
 
 (function() {
   "use strict";

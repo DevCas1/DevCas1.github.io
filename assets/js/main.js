@@ -1,3 +1,12 @@
+// Custom Elements
+// const Translate = xtag.create('x-translate-p', class extends XTagElement {
+//   content (){ return 'Translate'; }
+//   '::template(true)' (){
+//     return `<p>${this.content()}</p>`
+//   }
+// });
+
+
 (function() {
   "use strict";
 

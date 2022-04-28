@@ -7,12 +7,29 @@
 
 
 // }
+document.addEventListener('DOMContentLoaded', () =>{
+  var language = "en"; // Dynamically get language from browser, cookie or page
+
+  if (language === "nl")
+    return;
+
+  // var dictionary = fetch("./translations.json").then(response => { return response.json(); });
+  // var dictionary = JSON.parse(fetch("./translations.json")).then(jsondata => console.log(jsondata));
+  var dictionary = fetch("./assets/js/translations.json").then(response => {return response.json();}).then(jsondata => console.log(jsondata));
+  var translations = document.getElementsByTagName('translate');
+  console.log(translations);
+  
+  return;
+  for (let i = 0; i < translations.length; i++) {
+    translations[i].innerHTML = dictionary.find(translations[i].getAttribute('index'));
+  }
+});
 
 (function() {
   "use strict";
 
   /**
-   * Easy selector helper function
+   * Easy CSS element selector helper function
    */
   const select = (el, all = false) => {
     el = el.trim()

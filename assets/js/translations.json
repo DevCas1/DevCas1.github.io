@@ -1,124 +1,124 @@
 {
     "1":
-    {
-        "nl":["Over Mij"],
-        "en":["About Me"]
-    },
+    [
+        ["Over Mij"],
+        ["About Me"]
+    ],
     "2":
-    {
-        "nl":["Ik ben een <span class=\"typed\" data-typed-items=\"Programmeur, Designer, Gamer\">"],
-        "en":["About"]
-    },
+    [
+        ["Ik ben een <span class=\"typed\" data-typed-items=\"Programmeur, Designer, Gamer\">"],
+        ["About"]
+    ],
     "3.1":
-    {
-        "nl":["Over Mij"],
-        "en":["About Me"]
-    },
+    [
+        ["Over Mij"],
+        ["About Me"]
+    ],
     "3.2":
-    {
-        "nl":["Ik ben Sjouke IJntema, een enthousiaste en nieuwsgierige programmeur die graag weet hoe alles in elkaar steekt.",
+    [
+        ["Ik ben Sjouke IJntema, een enthousiaste en nieuwsgierige programmeur die graag weet hoe alles in elkaar steekt.",
             "<br>Ik werk graag met anderen maar kan ook zeker op mijzelf zijn, leer graag nieuwe dingen en krijg energie van het werken met nieuwe technieken en technologiën."],
-        "en":["About"]
-    },
+        ["About"]
+    ],
     "4.1.1":
-    {
-        "nl":["Geboortedatum"],
-        "en":["About"]
-    },
+    [
+        ["Geboortedatum"],
+        ["About"]
+    ],
     "4.1.2":
-    {
-        "nl":["Locatie"],
-        "en":["About"]
-    },
+    [
+        ["Locatie"],
+        ["About"]
+    ],
     "4.2":
-    {
-        "nl":["Diploma"],
-        "en":["About"]
-    },
+    [
+        ["Diploma"],
+        ["About"]
+    ],
     "4.3":
-    {
-        "nl":["Mijn passie is het creëren van interactieve ervaringen die herinneringen maken en emoties oproepen.<br>",
+    [
+        ["Mijn passie is het creëren van interactieve ervaringen die herinneringen maken en emoties oproepen.<br>",
             "Samen met nieuwe technologiën zoals VR en AR kunnen games zoveel meer toevoegen aan de wereld dan alleen een leuke bezigheid in de vrije tijd.<br><br>",
             "Hoewel games vaak voor vermaak zijn kunnen ze veel meer dan alleen tijd verdrijven.<br>",
-            ",Zoals muziek bij iemand met alzheimer kunnen games ook herinneringen terugbrengen. ",
+            "Zoals muziek bij iemand met alzheimer kunnen games ook herinneringen terugbrengen. ",
             "Een bepaalde soundtrack of beeld van de omgeving kan ook specifieke emoties oproepen en zo herinneringen doen herleven die anders verloren zijn of niet meer herinnerd kunnen worden.<br>",
             "Naast een emotionele connectie kunnen games ook nuttig zijn; zo maken veel basisscholen gebruik van educatieve spellen om kinderen zo bepaalde stof spelenderwijs te leren."],
-        "en":["About"]
-    },
+        ["About"]
+    ],
     "5":
-    {
-        "nl":["Deze skills heb ik op gedaan in mijn tijd als Programmeur en Game Ontwikkelaar.<br>",
+    [
+        ["Deze skills heb ik op gedaan in mijn tijd als Programmeur en Game Ontwikkelaar.<br>",
             "Alle skills zijn gegroepeerd en afgebeeld met niveau van beheersing, van beginner tot (zeer) ervaren."],
-        "en":["About"]
-    },
+        ["About"]
+        ],
     "6.1":
-    {
-        "nl":["Hieronder zijn al mijn werkervaringen te vinden zoals dat op mijn CV staan."],
-        "en":["About"]
-    },
+    [
+        ["Hieronder zijn al mijn werkervaringen te vinden zoals dat op mijn CV staan."],
+        ["About"]
+    ],
     "6.2":
-    {
-        "nl":["Enthousiaste en leergierige programmeur die graag interactieve ervaringen creëert voor anderen.<br>Momenteel werkzaam bij VodafoneZiggo als Technische Klantenservice."],
-        "en":["About"]
-    },
+    [
+        ["Enthousiaste en leergierige programmeur die graag interactieve ervaringen creëert voor anderen.<br>Momenteel werkzaam bij VodafoneZiggo als Technische Klantenservice."],
+        ["About"]
+    ],
     "6.3.1":
-    {
-        "nl":["Opleidingen"],
-        "en":["About"]
-    },
+    [
+        ["Opleidingen"],
+        ["About"]
+    ],
     "6.3.2":
-    {
-        "nl":["Professionele Ervaring"],
-        "en":["About"]
-    },
+    [
+        ["Professionele Ervaring"],
+        ["About"]
+    ],
     "6.3.3":
-    {
-        "nl":["Technische Klantenservice"],
-        "en":["About"]
-    },
+    [
+        ["Technische Klantenservice"],
+        ["About"]
+    ],
     "6.3.4":
-    {
-        "nl":["Als programmeur maakte ik deel uit van een team van 8 dat samen de game Stressjam tot leven geroepen heeft."],
-        "en":["About"]
-    },
+    [
+        ["Als programmeur maakte ik deel uit van een team van 8 dat samen de game Stressjam tot leven geroepen heeft."],
+        ["About"]
+    ],
     "7.1":
-    {
-        "nl":["In het portfolio zijn projecten, zowel privé als voor anderen en professioneel te vinden die mijn werkervaring reflecteren, maar ook mijn groei visualiseren."],
-        "en":["About"]
-    },
+    [
+        ["In het portfolio zijn projecten, zowel privé als voor anderen en professioneel te vinden die mijn werkervaring reflecteren, maar ook mijn groei visualiseren."],
+        ["About"]
+    ],
     "7.2":
-    {
-        "nl":["Alles"],
-        "en":["About"]
-    },
+    [
+        ["Alles"],
+        ["About"]
+    ],
     "8.1":
-    {
-        "nl":["Voor contact kan onderstaande contactformulier ingevuld worden. Ik neem dan zo snel mogelijk contact met je op."],
-        "en":["About"]
-    },
+    [
+        ["Voor contact kan onderstaande contactformulier ingevuld worden. Ik neem dan zo snel mogelijk contact met je op."],
+        ["About"]
+    ],
     "8.2.1":
-    {
-        "nl":["Naam"],
-        "en":["About"]
-    },
+    [
+        ["Naam"],
+        ["About"]
+    ],
     "8.2.2":
-    {
-        "nl":["Onderwerp"],
-        "en":["About"]
-    },
+    [
+        ["Onderwerp"],
+        ["About"]
+    ],
     "8.2.3":
-    {
-        "nl":["Bericht"],
-        "en":["About"]
-    },
+    [
+        ["Bericht"],
+        ["About"]
+    ],
     "8.2.4":
-    {
-        "nl":["Je bericht is verzonden, tot snel!"],
-        "en":["About"]
-    },
+    [
+        ["Je bericht is verzonden, tot snel!"],
+        ["About"]
+    ],
     "8.2.5":
-    {
-        "nl":["Verzend Bericht"],
-        "en":["About"]
-    }
+    [
+        ["Verzend Bericht"],
+        ["About"]
+    ]
 }

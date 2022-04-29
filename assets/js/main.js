@@ -7,22 +7,23 @@
 
 
 // }
-document.addEventListener('DOMContentLoaded', () =>{
-  var language = "en"; // Dynamically get language from browser, cookie or page
+document.addEventListener('DOMContentLoaded', async () =>{
+  let language = "nl"; // Dynamically get language from browser, cookie or page
 
-  if (language === "nl")
-    return;
+  // if (language === "nl")
+  //   return;'
 
-  // var dictionary = fetch("./translations.json").then(response => { return response.json(); });
-  // var dictionary = JSON.parse(fetch("./translations.json")).then(jsondata => console.log(jsondata));
-  var dictionary = fetch("./assets/js/translations.json").then(response => {return response.json();}).then(jsondata => console.log(jsondata));
-  var translations = document.getElementsByTagName('translate');
-  console.log(translations);
-  
-  return;
+  let dictionary = await fetch("./assets/js/translations.json").then(response => {return response.json();});
+  let translations = document.getElementsByTagName('translate');
+  // console.log(dictionary);
+
   for (let i = 0; i < translations.length; i++) {
-    translations[i].innerHTML = dictionary.find(translations[i].getAttribute('index'));
+    translations[i].outerHTML = Object.values(dictionary)[i][0].join('');
   }
+
+  // function indexOfTranslation(i) {
+  //   return translations[i].getAttribute('index');
+  // }
 });
 
 (function() {

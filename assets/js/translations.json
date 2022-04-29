@@ -1,117 +1,124 @@
 {
     "1":
     {
-        "nl":"Over Mij",
-        "en":"About Me"
+        "nl":["Over Mij"],
+        "en":["About Me"]
     },
     "2":
     {
-        "nl":"Ik ben een <span class=\"typed\" data-typed-items=\"Programmeur, Designer, Gamer, Muziekant\">",
-        "en":"About"
+        "nl":["Ik ben een <span class=\"typed\" data-typed-items=\"Programmeur, Designer, Gamer\">"],
+        "en":["About"]
     },
     "3.1":
     {
-        "nl":"Over Mij",
-        "en":"About Me"
+        "nl":["Over Mij"],
+        "en":["About Me"]
     },
     "3.2":
     {
-        "nl":"Ik ben Sjouke IJntema, een enthousiaste en nieuwsgierige programmeur die graag weet hoe alles in elkaar steekt.<br>Ik werk graag met anderen maar kan ook zeker op mijzelf zijn, leer graag nieuwe dingen en krijg energie van het werken met nieuwe technieken en technologiën.",
-        "en":"About"
+        "nl":["Ik ben Sjouke IJntema, een enthousiaste en nieuwsgierige programmeur die graag weet hoe alles in elkaar steekt.",
+            "<br>Ik werk graag met anderen maar kan ook zeker op mijzelf zijn, leer graag nieuwe dingen en krijg energie van het werken met nieuwe technieken en technologiën."],
+        "en":["About"]
     },
     "4.1.1":
     {
-        "nl":"Geboortedatum",
-        "en":"About"
+        "nl":["Geboortedatum"],
+        "en":["About"]
     },
     "4.1.2":
     {
-        "nl":"Locatie",
-        "en":"About"
+        "nl":["Locatie"],
+        "en":["About"]
     },
     "4.2":
     {
-        "nl":"Diploma",
-        "en":"About"
+        "nl":["Diploma"],
+        "en":["About"]
     },
     "4.3":
     {
-        "nl":"Mijn passie is het creëren van interactieve ervaringen die herinneringen maken en emoties oproepen.<br>Samen met nieuwe technologiën zoals VR en AR kunnen games zoveel meer toevoegen aan de wereld dan alleen een leuke bezigheid in de vrije tijd.<br>Hoewel games vaak voor vermaak zijn kunnen ze veel meer dan alleen tijd verdrijven.<br><br>Zoals muziek bij iemand met alzheimer kunnen games ook herinneringen terugbrengen. Een bepaalde soundtrack of beeld van de omgeving kan ook specifieke emoties oproepen en zo herinneringen doen herleven die anders verloren zijn of niet meer herinnerd kunnen worden.<br>Naast een emotionele connectie kunnen games ook nuttig zijn; zo maken veel basisscholen gebruik van educatieve spellen om kinderen zo bepaalde stof spelenderwijs te leren.",
-        "en":"About"
+        "nl":["Mijn passie is het creëren van interactieve ervaringen die herinneringen maken en emoties oproepen.<br>",
+            "Samen met nieuwe technologiën zoals VR en AR kunnen games zoveel meer toevoegen aan de wereld dan alleen een leuke bezigheid in de vrije tijd.<br><br>",
+            "Hoewel games vaak voor vermaak zijn kunnen ze veel meer dan alleen tijd verdrijven.<br>",
+            ",Zoals muziek bij iemand met alzheimer kunnen games ook herinneringen terugbrengen. ",
+            "Een bepaalde soundtrack of beeld van de omgeving kan ook specifieke emoties oproepen en zo herinneringen doen herleven die anders verloren zijn of niet meer herinnerd kunnen worden.<br>",
+            "Naast een emotionele connectie kunnen games ook nuttig zijn; zo maken veel basisscholen gebruik van educatieve spellen om kinderen zo bepaalde stof spelenderwijs te leren."],
+        "en":["About"]
     },
     "5":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Deze skills heb ik op gedaan in mijn tijd als Programmeur en Game Ontwikkelaar.<br>",
+            "Alle skills zijn gegroepeerd en afgebeeld met niveau van beheersing, van beginner tot (zeer) ervaren."],
+        "en":["About"]
     },
     "6.1":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Hieronder zijn al mijn werkervaringen te vinden zoals dat op mijn CV staan."],
+        "en":["About"]
     },
     "6.2":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Enthousiaste en leergierige programmeur die graag interactieve ervaringen creëert voor anderen.<br>Momenteel werkzaam bij VodafoneZiggo als Technische Klantenservice."],
+        "en":["About"]
     },
     "6.3.1":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Opleidingen"],
+        "en":["About"]
     },
     "6.3.2":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Professionele Ervaring"],
+        "en":["About"]
     },
     "6.3.3":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Technische Klantenservice"],
+        "en":["About"]
     },
     "6.3.4":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Als programmeur maakte ik deel uit van een team van 8 dat samen de game Stressjam tot leven geroepen heeft."],
+        "en":["About"]
     },
     "7.1":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["In het portfolio zijn projecten, zowel privé als voor anderen en professioneel te vinden die mijn werkervaring reflecteren, maar ook mijn groei visualiseren."],
+        "en":["About"]
     },
     "7.2":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Alles"],
+        "en":["About"]
     },
     "8.1":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Voor contact kan onderstaande contactformulier ingevuld worden. Ik neem dan zo snel mogelijk contact met je op."],
+        "en":["About"]
     },
     "8.2.1":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Naam"],
+        "en":["About"]
     },
     "8.2.2":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Onderwerp"],
+        "en":["About"]
     },
     "8.2.3":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Bericht"],
+        "en":["About"]
     },
     "8.2.4":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Je bericht is verzonden, tot snel!"],
+        "en":["About"]
     },
     "8.2.5":
     {
-        "nl":"Over",
-        "en":"About"
+        "nl":["Verzend Bericht"],
+        "en":["About"]
     }
 }

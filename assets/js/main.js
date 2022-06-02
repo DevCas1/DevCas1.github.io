@@ -7,23 +7,24 @@
 
 
 // }
-document.addEventListener('DOMContentLoaded', async () =>{
-  let language = "nl"; // Dynamically get language from browser, cookie or page
+window.addEventListener('load', async () =>{
+  let isEnglish = 0; // Dynamically get language from browser, cookie or page
 
-  // if (language === "nl")
-  //   return;'
+  if (isEnglish === 0)
+    return;
 
-  let dictionary = await fetch("./assets/js/translations.json").then(response => {return response.json();});
-  let translations = document.getElementsByTagName('translate');
-  // console.log(dictionary);
+  const translations = await fetch("./assets/js/translations.json").then(response => {return response.json();});
+  let translationTags = document.getElementsByTagName('translate');
+  // console.log(translations);
 
-  for (let i = 0; i < translations.length; i++) {
-    translations[i].outerHTML = Object.values(dictionary)[i][0].join('');
+  for (let i = 0; i < translationTags.length; i++) {
+    var index = translationTags[i].getAttribute('index');
+
+    // console.log("Translation at index(" + index + "): "+ translations[index][1]);
+
+    translationTags[i].innerHTML = translations[index][isEnglish];
   }
-
-  // function indexOfTranslation(i) {
-  //   return translations[i].getAttribute('index');
-  // }
+  console.log("Translation completed.");
 });
 
 (function() {

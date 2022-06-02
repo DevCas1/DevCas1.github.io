@@ -15,14 +15,9 @@ window.addEventListener('load', async () =>{
 
   const translations = await fetch("./assets/js/translations.json").then(response => {return response.json();});
   let translationTags = document.getElementsByTagName('translate');
-  // console.log(translations);
 
   for (let i = 0; i < translationTags.length; i++) {
-    var index = translationTags[i].getAttribute('index');
-
-    // console.log("Translation at index(" + index + "): "+ translations[index][1]);
-
-    translationTags[i].innerHTML = translations[index][isEnglish];
+    translationTags[i].innerHTML = translations[translationTags[i].getAttribute('index')][isEnglish];
   }
   console.log("Translation completed.");
 });

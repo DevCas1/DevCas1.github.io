@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoggR - Cases</title>
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">LoggR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cases
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item disabled" href="../logs/cases.html">Cases</a></li>
+            <li><a class="dropdown-item" href="../logs/ibobemail.html">Inbound / Outbound / E-mail</a></li>
+            <li><a class="dropdown-item" href="../logs/kdcall.html">Kennisdeskcall</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <form id="logForm">
+      <h1 id="logtitle">CASES</h1>
+      <h2 id="logsubtitle">Nieuwbouw en Kabelaanleg Particulier - CASE QUEUE</h2>
+      <div class="mb-3 logitem">
+        <label for="casequeue" id="" class="form-label">CASE QUEUE:</label>
+        <input type="text" class="form-control" id="casequeue" name="casequeue">
+      </div>
+      <div class="mb-3 logitem">
+        <label for="vraag" class="form-label">Vraag:</label>
+        <textarea id="vraag" class="form-control" name="vraag" cols="33"></textarea>
+      </div>
+      <div class="mb-3 logitem">
+        <label for="antwoord" class="form-label">Antwoord:</label>
+        <textarea id="antwoord" class="form-control" name="antwoord" cols="33"></textarea>
+      </div>
+      <div class="mb-3 logitem">
+        <label for="vervolg" class="form-label">Vervolg:</label>
+        <textarea id="vervolg" class="form-control" name="vervolg" cols="33"></textarea>
+      </div>
+      <div class="mb-3 logitem">
+        <label for="connectnr" class="form-label">Connect aanvraagnummer:</label>
+        <input type="text" class="form-control" name="connectnr" id="connectnr">
+      </div>
+      <div class="mb-3 btn-group" role="group">
+        <button type="button" class="btn btn-outline-danger" name="reset" id="reset">Reset</button>
+        <button type="button" class="btn btn-outline-success" name="copy" id="copy">Kopiëren</button>
+      </div>
+    </form>
+  </div>
+  <script src="../js/bootstrap.bundle.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

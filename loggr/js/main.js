@@ -21,16 +21,23 @@ function onLoad(){
             log = document.querySelector("#logtitle").innerHTML
         }
 
-        log += '\n' + document.querySelector("#logsubtitle").innerHTML + '\n\n';
+        let subtitle = document.querySelector("#logsubtitle");
+        if (subtitle !== null){
+            log += '\n' + subtitle.innerHTML;
+        }
         
         let inputs = document.querySelectorAll(".logitem");
 
         for (let index = 0; index < inputs.length; index++){
             let parent = inputs[index];
-            let isTextArea = parent.getElementsByClassName("form-control").item(0).tagName === 'TEXTAREA';
+            let isTextArea = parent.querySelector(".form-control").tagName === 'TEXTAREA';
+            let input = parent.querySelector(".form-control").value;
 
-            log += parent.getElementsByClassName("form-label").item(0).innerHTML + (isTextArea ? '\n' : ' ');
-            log += parent.getElementsByClassName("form-control").item(0).value + (index === (inputs.length - 1) ? '' : '\n\n');
+            if (input === ""){
+                continue;
+            }
+
+            log += '\n\n' + parent.querySelector(".form-label").innerHTML + (isTextArea ? '\n' : ' ') + input;
         }
         
         console.log(log);
@@ -53,8 +60,6 @@ function onLoad(){
             
             for(let index = 0; index < inputs.length; index++)
             inputs[index].value = "";
-            
-            document.querySelector("form").reset();
         }
     });
 }

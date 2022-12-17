@@ -35,6 +35,7 @@ function initVariables(){
     notesTab = document.getElementById("notes-textarea");
 }
 
+<<<<<<< HEAD
 function initEventListeners(){
     document.getElementById("copy").addEventListener("click", onCopy);
     document.getElementById("reset").addEventListener("click", onReset);
@@ -66,6 +67,32 @@ function onCopy(){
     if (isIbObEmailPage && stroomSelector.value.toLowerCase() === "e-mail"){
         log += " (" + document.getElementById("rn-nummer").value + ")";
     }
+=======
+        let subtitle = document.querySelector("#logsubtitle");
+        if (subtitle !== null){
+            log += '\n' + subtitle.innerHTML;
+        }
+        
+        let inputs = document.querySelectorAll(".logitem");
+
+        for (let index = 0; index < inputs.length; index++){
+            let parent = inputs[index];
+            let isTextArea = parent.querySelector(".form-control").tagName === 'TEXTAREA';
+            let input = parent.querySelector(".form-control").value;
+
+            if (input === ""){
+                continue;
+            }
+
+            log += '\n\n' + parent.querySelector(".form-label").innerHTML + (isTextArea ? '\n' : ' ') + input;
+        }
+        
+        console.log(log);
+        navigator.clipboard.writeText(log).catch(err => {
+          alert('Error while copying text: ', err);
+        });
+    });
+>>>>>>> cde60a90d831013b15f801cf0245ebf9147647ed
     
     log += document.getElementById("log-title")?.innerHTML ?? "";
 
@@ -78,6 +105,7 @@ function onCopy(){
     let witregelTussenItems = loadedPreferences["witregel-tussen-items"] === "true";
     let logLegeAntwoorden = loadedPreferences["log-lege-antwoorden"] === "true";
 
+<<<<<<< HEAD
     for (let index = 0; index < logItems.length; index++){
         let parent = logItems[index];
         let input = parent.querySelector(".log-input");
@@ -85,6 +113,12 @@ function onCopy(){
         if (logItems[index].className.includes("log-newline") && allowPreferences !== "true"){
             log += "\n";
             continue;
+=======
+            let inputs = document.querySelectorAll("input[type=text], textarea");
+            
+            for(let index = 0; index < inputs.length; index++)
+            inputs[index].value = "";
+>>>>>>> cde60a90d831013b15f801cf0245ebf9147647ed
         }
         
         if (allowPreferences && !logLegeAntwoorden && input.value === ""){
@@ -119,6 +153,7 @@ function onCopy(){
       alert("Fout bij het kopiëren van de log.\nFout:  ", error);
     });
 }
+<<<<<<< HEAD
 
 function onReset(){
     let resetText = "Reset";
@@ -183,3 +218,5 @@ function loadPreferences(){
 
     // console.log("Done loading " + settings.length + " preference" + (settings.length > 1 ? "s" : "") + "!");
 }
+=======
+>>>>>>> cde60a90d831013b15f801cf0245ebf9147647ed

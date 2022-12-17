@@ -1,13 +1,3 @@
-// import { FASTElement, customElement, attr, html } from "@microsoft/fast-element";
-
-// Custom Elements
-// @customElement("translate-tag")
-// export class TranslateTag extends FASTElement {
-//   @attr identifier: string = "0";
-
-
-// }
-
 (function() {
   "use strict";
 

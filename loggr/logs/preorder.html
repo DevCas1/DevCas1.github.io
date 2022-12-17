@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="allow-preferences" content="true">
-  <title>LoggR - Kennisdeskcall</title>
+  <meta name="allow-preferences" content="false">
+  <title>LoggR - Pre-order</title>
   <link href="../css/bootstrap.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
 </head>
@@ -17,13 +17,13 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Kennisdeskcall
+            Pre-order
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="../logs/cases.html">Cases</a></li>
             <li><a class="dropdown-item" href="../logs/ibobemail.html">Inbound / Outbound / E-mail</a></li>
-            <li><a class="dropdown-item disabled" href="../logs/kdcall.html">Kennisdeskcall</a></li>
-            <li><a class="dropdown-item" href="../logs/preorder.html">Pre-order</a></li>
+            <li><a class="dropdown-item" href="../logs/kdcall.html">Kennisdeskcall</a></li>
+            <li><a class="dropdown-item disabled" href="../logs/preorder.html">Pre-order</a></li>
           </ul>
         </li>
       </ul>
@@ -50,28 +50,88 @@
   </a>
   <div class="container">
     <form id="log-Form">
-      <h1 id="log-title">KD-CALL</h1>
-      <h2 id="log-subtitle">Nieuwbouw en Kabelaanleg Particulier - Kennisdeskcall</h2>
+      <h2 class="" id="log-title">Nav lijst pre-orders/bestellingen die reeds wensdatum hebben verstreken gekeken naar bestelling:</h2>
+      <div class="log-newline"></div>
       <div class="row mb-3 log-item">
-        <label for="naam" id="" class="col-sm-2 col-form-label log-label">Naam collega:</label>
+        <label for="reden" id="reden" class="col-sm-2 col-form-label log-label">Reden Pre-RFS:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control log-input" id="naam" name="naam">
+          <select class="form-select form-control log-input" id="redenselect">
+            <option default value="Onterechte status nieuwbouw">Onterechte status nieuwbouw</option>
+            <option value="Kabelaanleg">Kabelaanleg</option>
+          </select>
         </div>
       </div>
       <div class="row mb-3 log-item">
-        <label for="vraag" class="col-sm-2 col-form-label log-label">Vraag:</label>
+        <label for="klanttype" id="klanttype" class="col-sm-2 col-form-label log-label">Type Klant:</label>
         <div class="col-sm-10">
-          <textarea id="vraag" class="form-control log-input" name="vraag" cols="33" rows="3"></textarea>
+          <select class="form-select form-control log-input" id="klanttype">
+            <option default value="resi">Residentiëel</option>
+            <option value="zakelijk">Zakelijk</option>
+          </select>
         </div>
       </div>
       <div class="row mb-3 log-item">
-        <label for="antwoord" class="col-sm-2 col-form-label log-label">Antwoord:</label>
+        <label for="gereedmelding" class="col-sm-2 col-form-label log-label">Gereedmelding:</label>
         <div class="col-sm-10">
-          <textarea id="antwoord" class="form-control log-input" name="antwoord" cols="33" rows="3"></textarea>
+          <input type="text" class="form-control log-input" name="gereedmelding" id="gereedmelding" placeholder="dd-mm-jjjj">
         </div>
       </div>
       <div class="row mb-3 log-item">
-        <label for="connectnr" class="col-sm-2 col-form-label log-label">Connect aanvraagnummer:</label>
+        <label for="nbingeschakeld" id="klanttype" class="col-sm-2 col-form-label log-label">Newbuild ingeschakeld:</label>
+        <div class="col-sm-10">
+          <select class="form-select form-control log-input" id="nbingeschakeldselect" title="nbingeschakeld">
+            <option default value="nee">Nee</option>
+            <option value="ja">Ja</option>
+            <option value="nvt">n.v.t.</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3 log-item">
+        <label for="nbingeschakeld" id="klanttype" class="col-sm-2 col-form-label log-label">Registratie mijnieuwehuis:</label>
+        <div class="col-sm-10">
+          <select class="form-select form-control log-input" id="nbingeschakeldselect" title="nbingeschakeld">
+            <option default value="nee">Nee</option>
+            <option value="ja">Ja</option>
+          </select>
+        </div>
+      </div>
+      <br class="log-newline"><br>
+      <div class="row mb-3 log-item">
+        <label for="abcase" id="abcaselabel" class="col-sm-2 col-form-label log-label">AB Case:</label>
+        <div class="col-sm-10">
+          <select class="form-select form-control log-input" title="abcase">
+            <option default value="nee">Nee</option>
+            <option value="ja">Ja</option>
+          </select>
+        </div>
+      </div>
+      <br class="log-newline"><br>
+      <div class="row mb-3 log-item">
+        <label for="analyse" class="col-sm-2 col-form-label log-label">Analyse:</label>
+        <div class="col-sm-10">
+          <textarea id="analyse" class="form-control log-input" name="analyse" cols="33" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3 log-item">
+        <label for="actie" class="col-sm-2 col-form-label log-label">Actie:</label>
+        <div class="col-sm-10">
+          <textarea id="actie" class="form-control log-input" name="actie" cols="33" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3 log-item">
+        <label for="vervolg" class="col-sm-2 col-form-label log-label">Vervolg:</label>
+        <div class="col-sm-10">
+          <textarea id="vervolg" class="form-control log-input" name="vervolg" cols="33" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3 log-item">
+        <label for="adres" class="col-sm-2 col-form-label log-label">Nieuw adres:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control log-input" name="adres" id="adres">
+        </div>
+      </div>
+      <div class="row mb-3 log-item">
+        <label for="connectnr" class="col-sm-2 col-form-label log-label">Connectnummer:</label>
         <div class="col-sm-10">
           <input type="text" class="form-control log-input" name="connectnr" id="connectnr">
         </div>
@@ -87,6 +147,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Voorkeuren</h1>
+          <span class="text-danger" id="allow-preference-notice">Let op: Voorkeuren werken niet voor deze log!</span>
         </div>
         <div class="modal-body" id="settings-body">
           <div class="row g-3">
@@ -155,7 +216,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-	  <textarea class="form-control persistent" placeholder="Zet hier in dat je wilt onthouden" id="notes-textarea" style="resize: none; height: 840px"></textarea>
+	    <textarea class="form-control persistent" placeholder="Zet hier in dat je wilt onthouden" id="notes-textarea" style="resize: none; height: 840px"></textarea>
     </div>
   </div>
   <script src="../js/bootstrap.bundle.js"></script>

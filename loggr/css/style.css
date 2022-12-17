@@ -1,1 +1,7 @@
-/* */
+#offcanvasNotepad{
+    width: 850px;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: rgba(0, 0, 0, 0.9);
+  }

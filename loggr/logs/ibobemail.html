@@ -4,20 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="allow-preferences" content="true">
   <title>LoggR - Inbound / Outbound / E-mail</title>
   <link href="../css/bootstrap.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container">
       <a class="navbar-brand" href="../index.html">LoggR</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="dropdown">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Inbound / Outbound / E-mail
           </a>
@@ -25,19 +23,39 @@
             <li><a class="dropdown-item" href="../logs/cases.html">Cases</a></li>
             <li><a class="dropdown-item disabled" href="../logs/ibobemail.html">Inbound / Outbound / E-mail</a></li>
             <li><a class="dropdown-item" href="../logs/kdcall.html">Kennisdeskcall</a></li>
+            <li><a class="dropdown-item" href="../logs/preorder.html">Pre-order</a></li>
           </ul>
-        </div>
-      </div>
+        </li>
+      </ul>
+      <button type="button" class="nav-item btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#settingsBackdrop" id="settings-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+          <path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z"/>
+        </svg>
+      </button>
     </div>
   </nav>
+  <button type="button" class="position-absolute top-50 start-0 float-start btn border border-start-0 rounded-end" data-bs-toggle="offcanvas" href="#offcanvasNotepad" role="button" aria-controls="offcanvasExample" id="logs-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+      <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293L9 13.793z"/>
+    </svg>
+  </button>
+  <a href="https://forms.office.com/e/VB9Gt43UK2" target="_blank" rel="noopener noreferrer" type="button" class="position-absolute top-50 end-0 float-end btn border border-end-0 rounded-start" role="button" id="form-button"
+  data-bs-toggle="tooltip" 
+  data-bs-placement="left" 
+  data-bs-custom-class="custom-tooltip" 
+  data-bs-title="Link naar de Newbuild Escalatielijst">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+  </a>
   <div class="container">
-    <form id="logForm">
+    <form id="log-Form">
       <h1>
         INBOUND / OUTBOUND / E-MAIL
       </h1>
-      <h2 id="logsubtitle">Nieuwbouw en Kabelaanleg Particulier</h2>
+      <h2 id="log-subtitle">Nieuwbouw en Kabelaanleg Particulier</h2>
       <div class="input-group mb-3">
-        <select class="form-select form-control" id="logtitleselect">
+        <select class="form-select form-control" id="log-title-select">
           <option default value="inbound">Inbound</option>
           <option value="outbound">Outbound</option>
           <option value="e-mail">E-mail</option>
@@ -45,27 +63,111 @@
         <span class="input-group-text invisible" id="rn-nummer-label">RN-nummer</span>
         <input type="text" class="form-control invisible" id="rn-nummer" placeholder="1234-5678" aria-label="RightNow nummer">
       </div>
-      <div class="mb-3 logitem">
-        <label for="vraag" class="form-label">Vraag:</label>
-        <textarea id="vraag" class="form-control" name="vraag" cols="33"></textarea>
+      <div class="row mb-3 log-item">
+        <label for="vraag" class="col-sm-2 col-form-label log-label">Vraag:</label>
+        <div class="col-sm-10">
+          <textarea id="vraag" class="form-control log-input" name="vraag" cols="33" rows="3"></textarea>
+        </div>
       </div>
-      <div class="mb-3 logitem">
-        <label for="antwoord" class="form-label">Antwoord:</label>
-        <textarea id="antwoord" class="form-control" name="antwoord" cols="33"></textarea>
+      <div class="row mb-3 log-item">
+        <label for="antwoord" class="col-sm-2 col-form-label log-label">Antwoord:</label>
+        <div class="col-sm-10">
+          <textarea id="antwoord" class="form-control log-input" name="antwoord" cols="33" rows="3"></textarea>
+        </div>
       </div>
-      <div class="mb-3 logitem">
-        <label for="vervolg" class="form-label">Vervolg:</label>
-        <textarea id="vervolg" class="form-control" name="vervolg" cols="33"></textarea>
+      <div class="row mb-3 log-item">
+        <label for="vervolg" class="col-sm-2 col-form-label log-label">Vervolg:</label>
+        <div class="col-sm-10">
+          <textarea id="vervolg" class="form-control log-input" name="vervolg" cols="33" rows="3"></textarea>
+        </div>
       </div>
-      <div class="mb-3 logitem">
-        <label for="connectnr" class="form-label">Connect aanvraagnummer:</label>
-        <input type="text" class="form-control" name="connectnr" id="connectnr">
+      <div class="row mb-3 log-item">
+        <label for="connectnr" class="col-sm-2 col-form-label log-label">Connect aanvraagnummer:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control log-input" name="connectnr" id="connectnr">
+        </div>
       </div>
       <div class="mb-3 btn-group" role="group">
         <button type="button" class="btn btn-outline-danger" name="reset" id="reset">Reset</button>
         <button type="button" class="btn btn-outline-success" name="copy" id="copy">Kopiëren</button>
       </div>
     </form>
+  </div>
+  <div class="modal fade" id="settingsBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Voorkeuren</h1>
+        </div>
+        <div class="modal-body" id="settings-body">
+          <div class="row g-3">
+            <div class="col mb-3">
+              <label for="witregel-tussen-items" class="form-label"
+              data-bs-toggle="tooltip" 
+              data-bs-placement="top" 
+              data-bs-custom-class="custom-tooltip" 
+              data-bs-title="Dit zorgt ervoor dat na elk antwoord een witregel in de log gezet wordt.">
+                Witregel tussen antwoord en volgende vraag:
+              </label>
+            </div>
+            <div class="col mb-3">
+              <select class="form-select setting" id="witregel-tussen-items">
+                <option default value="false">Nee</option>
+                <option value="true">Ja</option>
+              </select>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col mb-3">
+              <label for="enter-in-antwoord" class="form-label"
+              data-bs-toggle="tooltip" 
+              data-bs-placement="top" 
+              data-bs-custom-class="custom-tooltip" 
+              data-bs-title="Dit zorgt ervoor dat het antwoord op een vraag op de regel onder de vraag komt.">
+                Antwoorden op volgende regel:
+              </label>
+            </div>
+            <div class="col mb-3">
+              <select class="form-select setting" id="enter-in-antwoord">
+                <option default value="nooit">Nooit</option>
+                <option value="enters">Met enters in het antwoord</option>
+                <option value="altijd">Altijd</option>
+              </select>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col mb-3">
+              <label for="enter-in-antwoord" class="form-label"
+              data-bs-toggle="tooltip" 
+              data-bs-placement="top" 
+              data-bs-custom-class="custom-tooltip" 
+              data-bs-title="Dit zorgt ervoor dat wanneer er een vraag in de log geen antwoord heeft, de vraag zonder antwoord wel of niet mee gekopiëerd wordt.">
+                Haal lege antwoorden uit log:
+              </label>
+            </div>
+            <div class="col mb-3">
+              <select class="form-select setting" id="log-lege-antwoorden">
+                <option default value="false">Nee</option>
+                <option value="true">Ja</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" id="close-settings-button">Sluiten</button>
+          <button type="button" class="btn btn-outline-success" id="save-settings" data-bs-dismiss="modal">Opslaan en sluiten</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNotepad" aria-labelledby="offcanvasNotepadLabel" style="resize: horizontal;">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNotepadLabel">Notities</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+	    <textarea class="form-control persistent" placeholder="Zet hier in dat je wilt onthouden" id="notes-textarea" style="resize: none; height: 840px"></textarea>
+    </div>
   </div>
   <script src="../js/bootstrap.bundle.js"></script>
   <script src="../js/main.js"></script>

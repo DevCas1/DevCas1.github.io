@@ -1,7 +1,11 @@
 #offcanvasNotepad{
-    width: 100%;
+    width: 850px;
+}
+
+.offcanvas-body textarea{
+	height: 100% !important;
 }
 
 .custom-tooltip {
     --bs-tooltip-bg: rgba(0, 0, 0, 0.9);
-  }
+}

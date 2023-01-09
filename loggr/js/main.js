@@ -546,17 +546,17 @@ function onReset(){
       }
     })
   
-    // window.addEventListener('DOMContentLoaded', () => {
-    //   showActiveTheme(getPreferredTheme())
+    window.addEventListener('DOMContentLoaded', () => {
+    //   showActiveTheme(getPreferredTheme()) //TODO: Implement theme switching button
   
-    //   document.querySelectorAll('[data-bs-theme-value]')
-    //     .forEach(toggle => {
-    //       toggle.addEventListener('click', () => {
-    //         const theme = toggle.getAttribute('data-bs-theme-value')
-    //         localStorage.setItem('theme', theme)
-    //         setTheme(theme)
-    //         showActiveTheme(theme)
-    //       })
-    //     })
-    // })
+      document.querySelectorAll('[data-bs-theme-value]')
+        .forEach(toggle => {
+          toggle.addEventListener('click', () => {
+            const theme = toggle.getAttribute('data-bs-theme-value')
+            localStorage.setItem('theme', theme)
+            setTheme(theme)
+            showActiveTheme(theme)
+          })
+        })
+    })
 })()

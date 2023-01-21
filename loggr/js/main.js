@@ -1,14 +1,16 @@
-const xmlLogstext = 
+// import { Modal } from "bootstrap";
+
+const builtinLogsText = 
 `<?xml version="1.0" encoding="UTF-8"?>
-<templates>
-    <template name="Cases" id="cases" title="CASES" subtitle="Nieuwbouw en Kabelaanleg Particulier - CASE QUEUE" allowPreferences="true">
+<templates version="built-in">
+    <template name="Cases" id="cases" type="Log" title="CASES" subtitle="Nieuwbouw en Kabelaanleg Particulier - CASE QUEUE" allowPreferences="true">
             <item name="Casequeue" id="casequeue" type="text" copyLabel="true" row="true">CASE QUEUE:</item>
             <item name="Vraag" id="vraag" type="textarea" copyLabel="true" row="true">Vraag:</item>
             <item name="Antwoord" id="antwoord" type="textarea" copyLabel="true" row="true">Antwoord:</item>
             <item name="Vervolg" id="vervolg" type="textarea" copyLabel="true" row="true">Vervolg:</item>
             <item name="Connect nummer" id="connectnr" type="text" copyLabel="true" row="true">Connect aanvraagnummer:</item>
     </template>
-    <template name="Inbound / Outbound / E-mail" title="INBOUND / OUTBOUND / E-MAIL" id="ibobemail" subtitle="Nieuwbouw en Kabelaanleg Particulier" allowPreferences="true">
+    <template name="Inbound / Outbound / E-mail" title="INBOUND / OUTBOUND / E-MAIL" id="ibobemail" subtitle="Nieuwbouw en Kabelaanleg Particulier" type="Log" allowPreferences="true">
         <row>
             <logTitleSelect name="Log Title Select" id="log-title-select" type="logTitleSelect" copyLabel="false" default="inbound" col="true">
                 <option value="inbound">Inbound</option>
@@ -25,13 +27,13 @@ const xmlLogstext =
         <item name="Vervolg" id="vervolg" type="textarea" copyLabel="true" row="true">Vervolg:</item>
         <item name="Connect nummer" id="connectnr" type="text" copyLabel="true" row="true">Connect aanvraagnummer:</item>
     </template>
-    <template name="Kennisdeskcall" id="kdcall" title="KD-CALL" subtitle="Nieuwbouw en Kabelaanleg Particulier - Kennisdeskcall" allowPreferences="true">
+    <template name="Kennisdeskcall" id="kdcall" type="Log" title="KD-CALL" subtitle="Nieuwbouw en Kabelaanleg Particulier - Kennisdeskcall" allowPreferences="true">
         <item name="Naam Collega" id="kdcall" type="text" copyLabel="true" row="true">Naam collega:</item>
         <item name="Vraag" id="vraag" type="textarea" copyLabel="true" row="true">Vraag:</item>
         <item name="Antwoord" id="antwoord" type="textarea" copyLabel="true" row="true">Antwoord:</item>
         <item name="Connect nummer" id="connectnr" type="text" copyLabel="true" row="true">Connect aanvraagnummer:</item>
     </template>
-    <template name="Pre-order" id="preorder" subtitle="Nav lijst pre-orders/bestellingen die reeds wensdatum hebben verstreken gekeken naar bestelling:" allowPreferences="false">
+    <template name="Pre-order" id="preorder" title="Nav lijst pre-orders/bestellingen die reeds wensdatum hebben verstreken gekeken naar bestelling:" type="Log" allowPreferences="false">
         <item name="Reden pre-RFS" id="redenprerfs" type="select" copyLabel="true" default="Onterechte status nieuwbouw" label="Reden Pre-RFS:" row="true">
             <option value="Onterechte status nieuwbouw">Onterechte status nieuwbouw</option>
             <option value="Kabelaanleg">Kabelaanleg</option>
@@ -50,8 +52,7 @@ const xmlLogstext =
             <option value="nee">Nee</option>
             <option value="ja">Ja</option>
         </item>
-        <logNewline/>
-        <newline/>
+        <newline logNewline="1"/>
         <newline/>
         <item name="Analyse" id="analyse" type="textarea" copyLabel="true" row="true">Analyse:</item>
         <item name="Acties" id="acties" type="textarea" copyLabel="true" row="true">Acties:</item>
@@ -59,29 +60,57 @@ const xmlLogstext =
         <item name="Nieuwadres" id="nieuwadres" type="text" copyLabel="true" row="true">Nieuw adres:</item>
         <item name="Connect nummer" id="connectnr" type="text" copyLabel="true" row="true">Connect aanvraagnummer:</item>
     </template>
-    <template name="TeleKnowledge log" id="tklog" allowPreferences="false">
-        <newline/>
-        <item name="Content" id="content" type="textarea" copyLabel="false" row="true">Content:</item>
-        <logNewline/>
-        <item name="Vervolg" id="vervolg" type="textarea" copyLabel="true" row="true">Vervolg:</item>
-        <logNewline/>
-        <logNewline/>
+    <template name="Adresbeheer Case" id="abcase" title="Bestaand adres" type="Case" allowPreferences="false">
+        <item name="Aansluiting aanwezig" id="aanslaanwezig" type="select" copyLabel="true" default="Ja" label="Is er een aansluiting van Ziggo aanwezig (groene kabel)?" row="true">
+            <option value="Ja">Ja</option>
+            <option value="Nee">Nee</option>
+        </item>
+        <newline logNewline="1"/>
+        <text row="true">Laat de klant indien mogelijk controleren of er al signaal is in de woning</text>
+        <item name="Signaal aanwezig" id="signaalaanwezig" type="select" copyLabel="true" default="Ja" label="Is er signaal aanwezig?" row="true">
+            <option value="Ja">Ja</option>
+            <option value="Onbekend">Onbekend</option>
+            <option value="Nee">Nee</option>
+        </item>
+        <newline logNewline="1"/>
+        <item name="Adres gewijzigd" id="adrgewijzigd" type="select" copyLabel="true" default="Nee" label="Is het adres gewijzigd (door de gemeente)?" row="true">
+            <option value="Nee">Nee</option>
+            <option value="Ja">Ja</option>
+        </item>
+        <item name="Adresaanpassing" id="adresaanpassing" type="text" copyLabel="true" row="true">Zo ja, geef aan wat er is aangepast:</item>
+        <newline logNewline="1"/>
+        <text row="true">Locatiegegevens van het probleem</text>
+        <item name="Postcode" id="postcode" type="text" copyLabel="true" row="true">Postcode:</item>
+        <item name="Huisnummer" id="huisnr" type="text" copyLabel="true" row="true">Huisnummer:</item>
+        <item name="Toevoeging" id="toevoeging" type="text" copyLabel="true" row="true">Toevoeging:</item>
+        <item name="Straatnaam" id="strnaam" type="text" copyLabel="true" row="true">Straatnaam:</item>
+        <item name="Woonplaats" id="woonplaats" type="text" copyLabel="true" row="true">Woonplaats:</item>
+        <newline logNewline="1"/>
+        <item name="Verhuis/leverdatum" id="verhleverdatum" type="text" copyLabel="true" row="true">Verhuis/leverdatum:</item>
+        <newline logNewline="1"/>
+        <item name="Salescode" id="salescode" type="text" copyLabel="true" row="true">Salescode:</item>
+        <item name="Gewenst pakket" id="pakket" type="text" copyLabel="true" row="true">Gewenst pakket:</item>
+        <item name="Rekeningnr" id="reknr" type="text" copyLabel="true" row="true">Rekeningnummer:</item>
+        <newline logNewline="1"/>
+        <item name="Toelichting" id="toelichting" type="textarea" copyLabel="true" row="true">Toelichting:</item>
     </template>
 </templates>`;
 
+const version = "1";
 const parser = new DOMParser();
-const xmlLogs = parser.parseFromString(xmlLogstext, "text/xml");
-// console.log(xmlLogs.children[0]);
+const fileReader = new FileReader();
+const resetText = "Reset";
+const confirmText = "Bevestig reset";
+const loadLogsModal = new bootstrap.Modal(document.getElementById("loadLogBackdrop"));
+// console.log(templatesFile.children[0]);
 
-var currentLog;
-var logItems;
-var logDropdown;
-var logSelect;
-var logDropdownOptions;
-var stroomSelector;
-var isIbObEmailPage;
-var allowPreferences;
-var notesTab;
+let allowPreferences;
+let currentLog;
+let isIbObEmailPage;
+let loadLogsButton;
+let loadLogsInput;
+let stroomSelector;
+let templatesFile;
 
 var loadedPreferences = {
     Id: "", 
@@ -101,28 +130,96 @@ function onPageLoaded(){
 }
 
 function setPageVariables(){
+    templatesFile = parseTemplateFile(builtinLogsText);
+    loadLogsButton = document.getElementById("load-logs-button");
+    loadLogsInput = document.getElementById("load-logs-input");
     logDropdown = document.getElementById("log-dropdown");
     logSelect = document.getElementById("log-select");
     notesTab = document.getElementById("notes-textarea");
     
-    setLogDropdownOptions();
+    setLogDropdownOptions(templatesFile);
 }
 
-function setLogDropdownOptions(){
-    let logs = xmlLogs.querySelectorAll("template");
-    let options = "";
+function parseTemplateFile(file) { return parser.parseFromString(file, "text/xml"); }
+
+function setLogDropdownOptions(templates){
+    let logs = templates.querySelectorAll("template");
+    logDropdownOptions = "";
 
     for(let index = 0; index < logs.length; index++){
-        options += '<option value="' + logs[index].id + '"' + (index === 0 ? " selected" : "" ) + '>' + logs[index].attributes.name.value + '</option>';
+        const log = logs[index];
+        logDropdownOptions += '<option value="' + log?.id + '"' + (log.attributes.name?.value === currentLog?.attributes.name.value ? " selected" : "" ) + '>' + log.attributes.type?.value + " - " + log.attributes.name?.value + '</option>';
     }
 
-    logSelect.innerHTML = options;
+    logSelect.innerHTML = logDropdownOptions;
 }
 
 function addPageEventListeners(){
+    loadLogsInput.addEventListener("change", () => { onLogsFileUploaded() });
+    loadLogsButton.addEventListener("click", () => { loadLogsInput.click(); })
     logSelect.addEventListener("change", (event) => { onLogdropdownOptionSelected(event) });
     document.getElementById("save-settings")?.addEventListener("click", onSavePreferences);
     notesTab?.addEventListener("blur", saveNotes);
+}
+
+function onLogsFileUploaded(){
+    file = loadLogsInput.files[0];
+    
+    if (file === null){
+        console.log("No file selected!");
+        return;
+    }
+    
+    if (!validFileType(file)){
+        alert('Incorrect file type selected! File is of type: "' + file.type + '", and must be of type "text/xml"!');
+        return;
+    }
+
+    const progressBar = document.getElementById("load-logs-progress-bar");
+    loadLogsModal.show();
+
+    fileReader.addEventListener("progress", (event) => { updateProgressBar(event, progressBar); });
+    fileReader.addEventListener("load", () => { onFileLoaded(fileReader, progressBar); });
+    
+    fileReader.readAsText(file);
+}
+
+function validFileType(file) { return file.type === "text/xml"; }
+
+function updateProgressBar(event, progressBar){
+    if (event.lengthComputable)
+        progressBar.style.width = `${(event.total / event.loaded)}%`;
+    else
+        progressBar.style.width = "100%";
+}
+
+function onFileLoaded(fileReader, progressBar){
+    const result = fileReader.result;
+    const newTemplates = parseTemplateFile(result);
+    const fileVersion = newTemplates.querySelector("templates").attributes.version;
+    
+    loadLogsInput.value = null;
+    
+    if (fileVersion === undefined || fileVersion.value > version){
+        setTimeout(() => { hideLoadModal(progressBar);  }, 1000);
+        setTimeout(() => { alert("Log vereist een nieuwere versie van LoggR!");  }, 1500);
+        return;
+    }
+
+    // console.log(result);
+    setTimeout(() => {
+        progressBar.style.width = "100%";
+        setTimeout(() => { 
+            templatesFile = newTemplates;
+            setLogDropdownOptions(templatesFile);
+            hideLoadModal(progressBar);
+        }, 1000);  
+    }, 1000);
+}
+
+function hideLoadModal(progressBar){
+    loadLogsModal.hide();
+    setTimeout(() => { progressBar.style.width = "0%"; }, 1000);
 }
 
 function onLogdropdownOptionSelected(event){ loadLog(event.target.value); }
@@ -134,7 +231,7 @@ function onSavePreferences(){
         return;
         
     for (let index = 0; index < settings.length; index++){
-        let setting = settings[index];
+        const setting = settings[index];
         
         window.localStorage.setItem(setting.id, setting.value);
         loadedPreferences[setting.id] = setting.value;
@@ -155,10 +252,9 @@ function loadPreferences(){
         return;
 
     for (let index = 0; index < settings.length; index++){
-        let settingId = settings[index].id;
-        let item = window.localStorage.getItem(settingId);
+        const settingId = settings[index].id;
 
-        loadedPreferences[settingId] = item ?? document.getElementById(settingId).value;
+        loadedPreferences[settingId] = window.localStorage.getItem(settingId) ?? document.getElementById(settingId).value;
         document.getElementById(settingId).value = loadedPreferences[settingId];
     }
 }
@@ -175,7 +271,7 @@ function enableTooltips(){
 }
 
 function loadLog(logToLoad){
-    currentLog = xmlLogs.querySelector('template[id="' + logToLoad + '"]');
+    currentLog = templatesFile.querySelector('template[id="' + logToLoad + '"]');
 
     const hasTitle = currentLog.attributes.title !== undefined;
     const hasSubtitle = currentLog.attributes.subtitle !== undefined;
@@ -225,9 +321,9 @@ function logElement(element){
         case "inputGroup":
             return logInputGroup(element, element.querySelector("span"), element.querySelector("item"));
         case "newline":
-            return newline();
-        case "logNewline":
-            return logNewline();
+            return newline(element.attributes.logNewline?.value);
+        case "text":
+            return logText(element);
         default:
             console.log('Log element of type <' + element.tagName + '> had not been implemented yet!');
             return "";
@@ -240,7 +336,7 @@ function logElement(element){
   * @param {string} copyLabel Specifies whether the copy button should also include the label's content
   * @param {string} col Whether the input element should contain 'col' in it's HTML classes
   */
-function label(name, content, copyLabel = "true", col = "false"){ return '<label for="' + name + '" class="col-sm-2 col-form-label log-label' + (col ? ' col' : '') + '" copyLabel=' + copyLabel + '>'  + content + '</label>'; }
+function label(name, content, copyLabel = "true", col = "false"){ return '<label for="' + name + '" class="col-sm-3 col-form-label log-label' + (col ? ' col' : '') + '" copyLabel=' + copyLabel + '>'  + content + '</label>'; }
 
 /**
   * @param {string} item
@@ -274,6 +370,8 @@ function logItemDiv(item){
   */
 function logInput(input, type, name = input.attributes.name.value, id = input.attributes.id.value, col = input.attributes.col?.value ?? "false"){
     switch(type){
+        case "date":
+            return dateInput(name, id, input.attributes.placeholder?.value, col);
         case "text":
             return textInput(name, id, input.attributes.placeholder?.value, col);
         case "textarea":
@@ -293,7 +391,16 @@ function logInput(input, type, name = input.attributes.name.value, id = input.at
   * @param {string} col Whether the input element should contain 'col' in it's HTML classes
   * @returns Test
   */
-function textInput(name, id, placeholder = "",  col = "false"){ return '<div class="col-sm-10' + (col ? ' col' : '') + '"><input name="' + name + '" type="text" class="form-control log-input" id="'+ id + '" placeholder="' + placeholder + '"></input></div>'; }
+function dateInput(name, id, placeholder = "",  col = "false"){ console.log("Date placeohlder: " + placeholder); return '<div class="col-sm-9' + (col ? ' col' : '') + '"><input name="' + name + '" type="date" class="form-control log-input" id="'+ id + '" placeholder="' + placeholder + '" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"></input></div>'; }
+
+/**
+  * @param {string} name The HTML name of the input element
+  * @param {string} id The HTML ID of the input element
+  * @param {string} placeholder The placeholder text to supply the HTML element
+  * @param {string} col Whether the input element should contain 'col' in it's HTML classes
+  * @returns Test
+  */
+function textInput(name, id, placeholder = "",  col = "false"){ return '<div class="col-sm-9' + (col ? ' col' : '') + '"><input name="' + name + '" type="text" class="form-control log-input" id="'+ id + '" placeholder="' + placeholder + '"></input></div>'; }
 
 /**
   * @param {string} name The HTML name of the input element
@@ -301,11 +408,11 @@ function textInput(name, id, placeholder = "",  col = "false"){ return '<div cla
   * @param {string} placeholder The placeholder text to supply the HTML element
   * @param {string} col Whether the input element should contain 'col' in it's HTML classes
   */
-function textareaInput(name, id, placeholder = "", col = "false"){ return '<div class="col-sm-10' + (col ? ' col' : '') + '"><textarea name="' + name + '" id="' + id + '" class="form-control log-input" cols="33" rows="3" placeholder="' + placeholder + '"></textarea></div>'; }
+function textareaInput(name, id, placeholder = "", col = "false"){ return '<div class="col-sm-9' + (col ? ' col' : '') + '"><textarea name="' + name + '" id="' + id + '" class="form-control log-input" cols="33" rows="3" placeholder="' + placeholder + '"></textarea></div>'; }
 
 function selectInput(item, name, id, col = "false"){
-    let options = item.querySelectorAll("option");
-    let result = '<div class="col-sm-10"><select name="' + name + '" id="' + id + '" class="form-select form-control';
+    const options = item.querySelectorAll("option");
+    let result = '<div class="col-sm-9"><select name="' + name + '" id="' + id + '" class="form-select form-control';
 
     if (col === "true")
         result += ' col';
@@ -313,19 +420,22 @@ function selectInput(item, name, id, col = "false"){
     result += '">'
 
     for (let index = 0; index < options.length; index++){
-        let option = options[index];
+        const option = options[index];
         result += '<option value="' + option.attributes.value.value + '">' + option.innerHTML + '</option>';
     }
 
     return result + '</select></div>';
 }
 
-function newline(){ return '<br/>'; }
+function newline(logNewline){ 
+    let result = '<br/>';
+    for (let index = 0; index < Number(logNewline); index++){
+        result += '<div class="log-item log-newline">';
+    }
+    return result; 
+}
 
-/**
- * @returns a div-string containing the class log-item and log-newline
- */
-function logNewline(){ return '<div class="log-item log-newline"></div>'; }
+function logText(element){ return '<div class="log-item' + (element.attributes.row?.value === "true" ? ' row mb-3' : '') + '"><text  style="padding-left: calc(var(--bs-gutter-x) * 0.5); padding-right: calc(var(--bs-gutter-x) * 0.5);">' + element.innerHTML + '</text></div>'; }
 
 /**
  * @param {string} content 
@@ -344,7 +454,7 @@ function logTitleSelect(item){
     result += '">'
 
     for (let index = 0; index < options.length; index++){
-        let option = options[index];
+        const option = options[index];
         result += '<option value="' + option.attributes.value.value + '">' + option.innerHTML + '</option>';
     }
 
@@ -381,6 +491,7 @@ function setLogVariables(){
     logItems = document.querySelectorAll(".log-item");
     stroomSelector = document.getElementById("log-title-select");
     isIbObEmailPage = stroomSelector !== null;
+    resetButton = document.getElementById("reset");
 }
 
 function addLogEventListeners(){
@@ -392,72 +503,85 @@ function addLogEventListeners(){
             document.getElementById("rn-nummer-group").className = "input-group col" + (stroomSelector.value === "e-mail" ? " visible" : " invisible");
         })
     }
+
+    let inputs = document.getElementsByClassName("log-input");
+
+    for (let index = 0; index < inputs.length; index++){
+        inputs[index].addEventListener("change", () => {
+            document.getElementById("reset").innerHTML = resetText;
+        })
+    }
 }
 
 function onCopy(){
-    let log = stroomSelector?.value?.toUpperCase() ?? "";
+    const logTitle = document.getElementById("log-title");
+    const logSubtitle = document.getElementById("log-subtitle");
+    let log = "";
 
     if (isIbObEmailPage){
-        if(stroomSelector.value.toLowerCase() === "e-mail")
-        log += " (" + document.getElementById("rn-nummer").value + ")";
+        log += stroomSelector.value.toUpperCase();
+        log += (stroomSelector.value.toLowerCase() === "e-mail") ? 
+            (" (" + document.getElementById("rn-nummer").value + ")") :
+            "";
     }
-    else{
-        log += document.getElementById("log-title")?.innerHTML ?? "";
+    else if (logTitle !== null && logTitle !== ""){
+        log += logTitle.innerHTML;
     }
     
-    let subtitle = document.getElementById("log-subtitle");
-
-    if (subtitle !== null && subtitle !== ""){
-        log += '\n' + subtitle.innerHTML;
+    if (logSubtitle !== null && logSubtitle !== ""){
+        log += "\n" + logSubtitle.innerHTML;
     }
 
-    let enterInAntwoord = loadedPreferences["enter-in-antwoord"];
-    let witregelTussenItems = loadedPreferences["witregel-tussen-items"] === "true";
-    let logLegeAntwoorden = loadedPreferences["log-lege-antwoorden"] === "true";
+    const enterInAntwoord = loadedPreferences["enter-in-antwoord"];
+    const witregelTussenItems = loadedPreferences["witregel-tussen-items"] === "true";
+    const logLegeAntwoorden = loadedPreferences["log-lege-antwoorden"] === "true";
 
     // console.log("Found log items:");
     // console.log(logItems);
 
     for (let index = 0; index < logItems.length; index++){
-        let parent = logItems[index];
-        
-        let input = parent.querySelector("input, textarea, select");
-        let copyLabel = parent.querySelector(".log-label")?.attributes?.copylabel?.value === "true";
-        
-        if (parent.className.includes("log-newline") && allowPreferences === false){
-            // console.log("log-newline found, continueing...");
+        const parent = logItems[index];
+        const item = parent.querySelector("input, textarea, select, text");
+
+        if (parent.className.includes("log-newline")){
             log += "\n";
             continue;
         }
         
-        if (allowPreferences && !logLegeAntwoorden && input.value === ""){
+        if ((allowPreferences && !logLegeAntwoorden && item.value === "")){
+            continue;
+        }
+
+        const copyLabel = parent.querySelector(".log-label")?.attributes?.copylabel?.value === "true";
+
+        log += (allowPreferences && witregelTussenItems) ? "\n\n" : "\n";
+
+        if (item.tagName === "TEXT"){
+            log += item.innerHTML.replaceAll('<br>', "\n");
             continue;
         }
         
-        log += ((allowPreferences && witregelTussenItems) ? "\n\n" : "\n");
-        
-
         if (copyLabel)
             log += parent.querySelector(".log-label").innerHTML;
-
+        
         if (allowPreferences){
             switch(enterInAntwoord){
                 case "altijd":
                     log += "\n";
                     break;
                 case "enters":
-                    log += ((input.value.indexOf("\n") === -1) ? (copyLabel ? " " : "") : "\n");
+                    log += ((item.value.indexOf("\n") === -1) ? (copyLabel ? " " : "") : "\n");
                     break;
-                default:
-                    log += (copyLabel ? " " : "");
-                    break;
-            }
-        }
+                    default:
+                        log += (copyLabel ? " " : "");
+                        break;
+                    }
+                }
         else{
             log += copyLabel ? " " : "";
         }
-
-        log += input.value
+        
+        log += item.value;
     }
     
     navigator.clipboard.writeText(log).catch(error => {
@@ -465,11 +589,7 @@ function onCopy(){
     });
 }
 
-function onReset(){
-    let resetText = "Reset";
-    let confirmText = "Bevestig reset";
-    let resetButton = document.getElementById("reset");
-    
+function onReset(){    
     if (resetButton.innerHTML != confirmText){
         resetButton.innerHTML = confirmText;
         return;
@@ -478,7 +598,7 @@ function onReset(){
     resetButton.innerHTML = resetText;
 
     for(let index = 0; index < logItems.length; index++){
-        let input = logItems[index].querySelector("input[type=text], textarea, select")
+        const input = logItems[index].querySelector("input[type=text], textarea, select")
 
         if (input === null) // In case the input isn't actually an input. TODO: Filter non-inputs before looping over them
             continue;
@@ -497,13 +617,6 @@ function onReset(){
  * Copyright 2011-2022 The Bootstrap Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  */
-
-/*!
- * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Licensed under the Creative Commons Attribution 3.0 Unported License.
- */
-
 (() => {
     'use strict'
   

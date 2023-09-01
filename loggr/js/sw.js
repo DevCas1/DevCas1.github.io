@@ -5,10 +5,10 @@ self.addEventListener('install', event => {
         const cache = await caches.open(CACHE_NAME);
         cache.addAll([
             '/',
-            '/bootstrap.bundle.js',
-            '/main.js',
-            '/css/bootstrap.css',
-            '/css/style.css'
+            './bootstrap.bundle.js',
+            './main.js',
+            './css/bootstrap.css',
+            './css/style.css'
         ]);
     })());
 });

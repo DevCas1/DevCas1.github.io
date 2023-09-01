@@ -1,96 +1,138 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
-
 :root {
-	--opacity: 0.01;
-	--blur: 6px;
-	--saturation: 200%;
-	--brightness: 99.8%;
-	--bs-border-color: rgba(0, 0, 0, 0.1);
+  --opacity: 0.01;
+  --blur: 6px;
+  --saturation: 200%;
+  --brightness: 99.8%;
+  --bs-border-color: rgba(0, 0, 0, 0.1);
 }
 
 form {
-	padding: 10px 20px !important;
-	--bs-gutter-x : 20rem;
-	background-color: rgba(var(--bs-body-bg-rgb), var(--opacity));
-	backdrop-filter: saturate(var(--saturation)) blur(var(--blur)) brightness(var(--brightness));
-	-webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
+  padding: 10px 20px !important;
+  --bs-gutter-x: 20rem;
+  background-color: rgba(var(--bs-body-bg-rgb), var(--opacity));
+  backdrop-filter: saturate(var(--saturation)) blur(var(--blur)) brightness(var(--brightness));
+  -webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
 }
 
 body {
-	background: url("../assets/img/vz-bg.png") no-repeat center center fixed;
-	background-blend-mode: screen;
-	background-color: var(--bs-body-bg-rgb);
-	background-size: cover;
+  background: url("/assets/img/vz-bg.png") no-repeat center center fixed;
+  /* background: url(https://wallboard.internal.vodafoneziggo.com/images/vz-bg.png) no-repeat center center fixed; */
+  background-blend-mode: screen;
+  background-color: var(--bs-body-bg-rgb);
+  background-size: cover;
 }
 
 input[type="file"] {
-	display: none;
+  display: none;
+}
+
+.form-label {
+  vertical-align: middle;
 }
 
 .offcanvas-body textarea {
-	height: 100% !important;
+  height: 100% !important;
 }
 
 .custom-tooltip {
-    --bs-tooltip-bg: rgba(0, 0, 0, 0.9);
+  --bs-tooltip-bg: rgba(0, 0, 0, 0.9);
 }
- 
-.navbar-brand, .navbar-brand:hover {
-	color: white;
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: white;
 }
 
 .floating-button {
-	background-color: rgba(var(--bs-body-bg-rgb), var(--opacity));
-	backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
-	-webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
+  background-color: rgba(var(--bs-body-bg-rgb), var(--opacity));
+  backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
+  -webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
 }
 
 .offcanvas {
-	background-color: rgba(var(--bs-body-bg-rgb), 0.75) !important;
-	backdrop-filter: saturate(var(--saturation)) blur(var(--blur)) brightness(var(--brightness));
-	-webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
+  background-color: rgba(var(--bs-body-bg-rgb), 0.75) !important;
+  backdrop-filter: saturate(var(--saturation)) blur(var(--blur)) brightness(var(--brightness));
+  -webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
 }
 
 .modal-content {
-	background-color: rgba(var(--bs-body-bg-rgb), 0.75) !important;
-	backdrop-filter: saturate(var(--saturation)) blur(var(--blur)) brightness(var(--brightness));
-	-webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
+  background-color: rgba(var(--bs-body-bg-rgb), 0.75) !important;
+  backdrop-filter: saturate(var(--saturation)) blur(var(--blur)) brightness(var(--brightness));
+  -webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
 }
 
 .vertical-center {
-	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-	min-height: 90vh; /* These two lines are counted as one :-)       */
-	display: flex;
-	align-items: center;
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 90vh;
+  /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
 }
-  
+
+.form-check-input:checked {
+  background-color: #e70000;
+  border-color: #e70000;
+}
+
+.divider {
+  margin: auto;
+  /* width: 95%; */
+  width: 100%;
+  height: 1px;
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.1) 90%, rgba(0, 0, 0, 0) 100%); */
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.logText {
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+}
+
 #navbar {
-	background: linear-gradient(90deg,#E60000 0%,#E60000 24.65%,#F48C00 74.74%,#F48C00 100%) !important;
+  background: linear-gradient(90deg, #E60000 0%, #E60000 24.65%, #F48C00 74.74%, #F48C00 100%) !important;
 }
 
 #container {
-	margin: 10px 0px;
+  margin: 10px 0px;
+}
+
+#toggle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 #offcanvasNotepad {
-    width: 850px;
-    resize: horizontal;
-    overflow: hidden;
+  width: 850px;
+  resize: horizontal;
+  overflow: hidden;
 }
 
-#notes-textarea {
-	background-color: rgba(0, 0, 0, 0) !important;
-	backdrop-filter: saturate(var(--saturation)) blur(var(--blur)) brightness(var(--brightness));
-	-webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
-}
+/* #notes-textarea {
+  background-color: rgba(0, 0, 0, 0) !important;
+  backdrop-filter: saturate(var(--saturation)) blur(var(--blur)) brightness(var(--brightness));
+  -webkit-backdrop-filter: saturate(var(--saturation)) blur(var(--blur));
+} */
 
 #load-logs-progress-bar {
-	background-image: linear-gradient(90deg,#E60000 0%,#E60000 24.65%,#F48C00 74.74%,#F48C00 100%) !important;
-	background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(90deg, #E60000 0%, #E60000 24.65%, #F48C00 74.74%, #F48C00 100%) !important;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #advanced-settings {
-	border-top: solid 1px;
-	border-color: rgba(0, 0, 0, 0.1);
-	padding-top: 1rem;
+  border-top: solid 1px;
+  border-color: rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+}
+
+#copyButton:active {
+  background-color: #12613c;
+  transition-duration: 0.1s
+}
+
+#resetButton:active {
+  background-color: darkred;
+  transition-duration: 0.1s;
 }

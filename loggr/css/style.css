@@ -15,7 +15,7 @@ form {
 }
 
 body {
-  background: url("./assets/img/vz-bg.png") no-repeat center center fixed;
+  background: url("../assets/img/vz-bg.png") no-repeat center center fixed;
   /* background: url(https://wallboard.internal.vodafoneziggo.com/images/vz-bg.png) no-repeat center center fixed; */
   background-blend-mode: screen;
   background-color: var(--bs-body-bg-rgb);
